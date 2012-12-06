@@ -16,4 +16,10 @@ main: main.o
 	gcc -o main main.o -lopenblas
 
 main.o: main.c
-	gcc -c main.c 
+	gcc -c main.c
+
+clean:
+	rm -f *.o
+	rm -f main
+	rm -f cumain
+	rm -f cublas
