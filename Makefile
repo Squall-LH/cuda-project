@@ -1,4 +1,10 @@
-all: main cumain
+all: main cumain cublas
+
+cublas: cublas.o
+	nvcc --link -o cublas cublas.o -lrt -lcudart -lcublas
+
+cublas.o: cublas.cu
+	nvcc --compile --compiler-options -O2 -o cublas.o cublas.cu
 
 cumain: cumain.o
 	nvcc --link -o cumain cumain.o -lrt -lcudart -lcublas
