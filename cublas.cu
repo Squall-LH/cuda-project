@@ -50,7 +50,7 @@
 #include "helper_cuda.h"
 
 /* Matrix size */
-#define N  (275)
+int N = 275;
 
 /* Host implementation of a simple version of sgemm */
 static void simple_sgemm(int n, float alpha, const float *A, const float *B,
@@ -100,6 +100,15 @@ int main(int argc, char **argv)
 	if( dev == -1 ) {
 		return EXIT_FAILURE;
 	}
+
+	if(argc < 2) {
+        printf("Pas de taille de matrice particulière indiquée en paramètre.\nTaille par défaut: %d", N);	
+	}
+    else {
+        N = atoi(argv[1]);        
+        n2 = N * N;
+        printf("N: %d\n", N);
+    }
 
     /* Initialize CUBLAS */
     printf("simpleCUBLAS test running..\n");
