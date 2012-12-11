@@ -5,11 +5,12 @@
 # Programmation avancée.
 
 output="result.txt"
-
 rm -rf $output
 
+# On s'assure que les exécutables sont compilés
 make
 
+# Tailles de 1024 à 8192 par pas de 1024
 matrix_sizes=`seq 1024 1024 8192`
 for s in $matrix_sizes ; do
 	echo "./cublas $s"
@@ -26,6 +27,7 @@ done
 
 rm -rf tmp.txt
 
+# Affichage du graphique
 gnuplot gnuplot.config
 
 exit 0
