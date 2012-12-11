@@ -1,4 +1,9 @@
-all: main cumain cublas
+# Auteurs : Thomas BLANCHARD, Marc LEGEAY, Florian LÉPINAY, Yann MAVREL.
+# M2 SILI, M2 ID.
+# 2012-2013
+# Programmation avancée.
+
+all: blas cublas
 
 cublas: cublas.o
 	nvcc --link -o cublas cublas.o -lrt -lcudart -lcublas
@@ -6,20 +11,13 @@ cublas: cublas.o
 cublas.o: cublas.cu
 	nvcc --compile --compiler-options -O2 -o cublas.o cublas.cu
 
-cumain: cumain.o
-	nvcc --link -o cumain cumain.o -lrt -lcudart -lcublas
+blas: blas.o
+	gcc -o blas blas.o -lopenblas
 
-cumain.o: main.cu
-	nvcc --compile --compiler-options -O2 -o cumain.o main.cu
-
-main: main.o
-	gcc -o main main.o -lopenblas
-
-main.o: main.c
-	gcc -c main.c
+blas.o: blas.c
+	gcc -c -O3 blas.c
 
 clean:
 	rm -f *.o
-	rm -f main
-	rm -f cumain
+	rm -f blas
 	rm -f cublas
