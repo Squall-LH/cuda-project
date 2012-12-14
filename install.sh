@@ -18,7 +18,7 @@ tar xvf openblas.tar
 cd xianyi-OpenBLAS-93dd133
 
 make
-sudo make PREFIX=/opt install
+sudo make PREFIX=/opt/OpenBLAS install
 
 echo "Suppression des fichiers temporaires ..."
 cd ../..

@@ -15,7 +15,7 @@ g77 -o BLAS BLAS.o /home/bbecker/local/CBLAS/lib/LINUX/cblas_LINUX.a /usr/lib/li
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "/opt/include/cblas.h"
+#include "/opt/OpenBLAS/include/cblas.h"
 #include <time.h>
 #include <math.h>
 

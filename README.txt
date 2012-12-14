@@ -17,7 +17,7 @@ Nous utilisons la librairie CUBLAS fournie avec CUDA pour l'utilisation de BLAS 
 ==========================================
 
 Exécuter le script "install.sh".
-L'implémentation OpenBLAS sera installée dans le dossier /opt.
+L'implémentation OpenBLAS sera installée dans le dossier /opt/OpenBLAS.
 
 
 ==========================================

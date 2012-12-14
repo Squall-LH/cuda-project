@@ -19,7 +19,12 @@ Se rendre dans le répertoire détarré puis
 make
 
 5. Installer OpenBLAS :
-sudo make PREFIX=/opt install
+sudo make PREFIX=/opt/OpenBLAS install
 
 Si vous ne souhaitez pas installer OpenBLAS dans le répertoire /opt, il suffit de modifier la variable PREFIX.
-Si vous le faîtes, il faudra alors également modifier le fichier blas.c
+Si vous le faîtes, il faudra alors également modifier le fichier blas.c :
+ligne 18 :
+#include "/opt/OpenBLAS/include/cblas.h"
+->
+#include "<PREFIX>/include/cblas.h"
+
