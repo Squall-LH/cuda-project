@@ -1,0 +1,25 @@
+Auteurs : Thomas BLANCHARD, Marc LEGEAY, Florian LÉPINAY, Yann MAVREL.
+M2 SILI, M2 ID.
+2012-2013
+Programmation avancée.
+
+Si vous ne souhaitez pas utiliser le script "install.sh", voici la procédure à suivre :
+
+1. S'assurer que gfortran est installer :
+sudo apt-get install gfortran
+
+2. Télécharger l'implémentation OpenBLAS :
+wget http://github.com/xianyi/OpenBLAS/tarball/v0.2.5 -O openblas.tar
+
+3. Dé-tarrer l'archive :
+tar xvf openblas.tar
+
+4. Compiler les sources d'OpenBLAS :
+Se rendre dans le répertoire détarré puis
+make
+
+5. Installer OpenBLAS :
+sudo make PREFIX=/opt install
+
+Si vous ne souhaitez pas installer OpenBLAS dans le répertoire /opt, il suffit de modifier la variable PREFIX.
+Si vous le faîtes, il faudra alors également modifier le fichier blas.c
