@@ -1,3 +1,0 @@
-implémentation : openBLAS.
-compilateur fortran : gfortran (implématation gcc)
-

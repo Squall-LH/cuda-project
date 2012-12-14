@@ -203,6 +203,8 @@ int main(int argc, char **argv)
         fprintf(stderr, "!!!! kernel execution error.\n");
         return EXIT_FAILURE;
     }
+    
+    printf("elapsed=%lf\n", elapsed_time());
 
     /* Read the result back */
     status = cublasGetVector(n2, sizeof(h_C[0]), d_C, 1, h_C, 1);
@@ -212,8 +214,6 @@ int main(int argc, char **argv)
         fprintf(stderr, "!!!! device access error (read C)\n");
         return EXIT_FAILURE;
     }
-    
-    printf("elapsed=%lf\n", elapsed_time());
 
     /* Memory clean up */
     free(h_A);
